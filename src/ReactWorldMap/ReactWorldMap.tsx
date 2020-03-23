@@ -2,7 +2,21 @@ import React, { useState } from "react"
 import { geoMercator, geoPath } from "d3-geo"
 import geoData from "../data/countries.geo"
 
-const ReactWorldMap = () => {
+interface IData {
+  "country-code": string;
+  value: number;
+}
+
+interface IProps {
+  data: IData[];
+  title?: string;
+  color?: string;
+  "value-title": string;
+  size?: string; // possile values are xs, sm, md, lg, xl
+}
+
+const ReactWorldMap:React.FC<IProps> = (props) => {
+
   // Declare a new state variable, which we'll call "count"
   const [color, setColor] = useState("#dedede");
   const [countryValueMap, setCountryValueMap] = useState([]);
