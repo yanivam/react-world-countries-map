@@ -23,12 +23,21 @@ interface ISize {
 }
 
 const CSizes: {[key:string]:ISize} = {
-  "xs": {width: 480, height: 360},
-  "sm": {width: 576, height: 432},
-  "md": {width: 768, height: 576},
-  "lg": {width: 992, height: 744},
-  "xl": {width: 1200, height: 900}
+  "xs": {width: 400, height: 160}, //screen size: 480x360
+  "sm": {width: 400, height: 160}, //screen size: 576x432
+  "md": {width: 500, height: 200}, //screen size: 768x576
+  "lg": {width: 600, height: 240}, //screen size: 992x744
+  "xl": {width: 380, height: 288} //screen size: 1200x900
 }
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// TODO: use viewBox
+// https://css-tricks.com/scale-svg/
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 const ReactWorldMap: React.FC<IProps> = (props) => {
 
@@ -36,7 +45,8 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
   const size = typeof(props.size)!=="undefined" ? props.size : "xs"
   const width = CSizes[size].width + "px"
   const height = CSizes[size].height + "px"
-  const scale = CSizes[size].width*0.05
+//  const scale = CSizes[size].width*0.05
+  const scale = 30
 
   // Build the country map for direct access
   const countryValueMap: {[key:string]:number} = {}
@@ -80,7 +90,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
 
   return (
     <div className="mapView">
-      <svg className="map" max-width={width} max-height={height}>
+      <svg className="map" width={width} height={height} viewBox="-15 -5 200 100">
         {countriesPath}
       </svg>
     </div>
