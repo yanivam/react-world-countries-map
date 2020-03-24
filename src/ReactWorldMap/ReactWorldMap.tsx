@@ -19,32 +19,30 @@ interface IProps {
 
 interface ISize {
   height: number,
-  width: number
+  width: number,
+  viewBox: string
 }
 
 const CSizes: {[key:string]:ISize} = {
-  "xs": {width: 400, height: 160}, //screen size: 480x360
-  "sm": {width: 400, height: 160}, //screen size: 576x432
-  "md": {width: 500, height: 200}, //screen size: 768x576
-  "lg": {width: 600, height: 240}, //screen size: 992x744
-  "xl": {width: 1000, height: 400} //screen size: 1200x900
+  "xs": {width: 78, height: 66, viewBox: "0 -200 960 760"}, //screen size: 480x360
+  "sm": {width: 120, height: 100, viewBox: "0 -200 960 760"}, //screen size: 576x432
+  "md": {width: 168, height: 140, viewBox: "0 -200 960 760"}, //screen size: 768x576
+  "lg": {width: 240, height: 200, viewBox: "0 -200 960 760"}, //screen size: 992x744
+  "xl": {width: 360, height: 300, viewBox: "0 -200 960 760"}, //screen size: 1200x900
 }
-
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// TODO: use viewBox
-// https://css-tricks.com/scale-svg/
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 const ReactWorldMap: React.FC<IProps> = (props) => {
 
   // Setup width and height based on size
   const size = typeof(props.size)!=="undefined" ? props.size : "xs"
+  /* const width = CSizes[size].width
+  const height = CSizes[size].height
+  const viewBox = "0 -200 " + width + " " + height
+*/
+
   const width = CSizes[size].width
   const height = CSizes[size].height
+  const viewBox = CSizes[size].viewBox
 
   // Build the country map for direct access
   const countryValueMap: {[key:string]:number} = {}
@@ -74,19 +72,17 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
       //const averageValue = computedAverage(props.data.values)
       //const standardDeviation = computedStandardDeviation(props.data.values)
       const color = typeof(countryValueMap[feature.properties.ISO_A2])!="undefined" ? props.color : CDefaultColor
-      return <path
+      const path = <path
         key={"path" + idx}
         d={pathGenerator(feature as GeoJSON.Feature) as string}
         style={{ fill: color, fillOpacity: 1, stroke: "black", strokeWidth: 1, strokeOpacity: 0.1, cursor: "pointer" }}
-        className="countries"
-      />
+      /> 
+      return path
     })
-
-  const viewBox = "0 0 " + width + " " + height
 
   return (
     <div className="mapView">
-      <svg className="map" width={"100%"} height={"100%"} viewBox={viewBox}>
+      <svg className="map" height={height+"px"} width={width+"px"} viewBox={viewBox}>
         {countriesPath}
       </svg>
     </div>

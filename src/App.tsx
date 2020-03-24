@@ -21,15 +21,16 @@ function App() {
 
   return (
     < div className="App" >
-      <header className="header">My Map</header>
-      <ReactWorldMap color="#ff0000" title="My Chart" size="xl" data={data} />
+      < div className="Main">
+        <ReactWorldMap color="#ff0000" title="My Chart" size="xl" data={data} />
+      </div>
     </div>
   );
 }
 
 export default App;
 
-/* 
+/*
         <br/>
         <h1>size=lg</h1>
         <ReactWorldMap color="#ff0000" title="My Chart" size="lg" data={data} />
