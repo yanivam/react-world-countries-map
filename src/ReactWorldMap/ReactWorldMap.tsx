@@ -27,7 +27,7 @@ const CSizes: {[key:string]:ISize} = {
   "sm": {width: 400, height: 160}, //screen size: 576x432
   "md": {width: 500, height: 200}, //screen size: 768x576
   "lg": {width: 600, height: 240}, //screen size: 992x744
-  "xl": {width: 380, height: 288} //screen size: 1200x900
+  "xl": {width: 1000, height: 400} //screen size: 1200x900
 }
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -43,10 +43,8 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
 
   // Setup width and height based on size
   const size = typeof(props.size)!=="undefined" ? props.size : "xs"
-  const width = CSizes[size].width + "px"
-  const height = CSizes[size].height + "px"
-//  const scale = CSizes[size].width*0.05
-  const scale = 30
+  const width = CSizes[size].width
+  const height = CSizes[size].height
 
   // Build the country map for direct access
   const countryValueMap: {[key:string]:number} = {}
@@ -56,11 +54,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
     countryValueMap[key] = value
   })
 
-
-  // Declare a new state variable, which we'll call "count"
-  //const [color, setColor] = useState("#dedede");
-  //const [countryValueMap, setCountryValueMap] = useState([]);
-  const projection = geoMercator().scale(scale).translate([CSizes[size].width / 4.5, CSizes[size].height / 4.5])
+  const projection = geoMercator()
   const pathGenerator = geoPath().projection(projection)
   /*var showTooltip = false
   var clickedCountryName = ""
@@ -88,9 +82,11 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
       />
     })
 
+  const viewBox = "0 0 " + width + " " + height
+
   return (
     <div className="mapView">
-      <svg className="map" width={width} height={height} viewBox="-15 -5 200 100">
+      <svg className="map" width={"100%"} height={"100%"} viewBox={viewBox}>
         {countriesPath}
       </svg>
     </div>

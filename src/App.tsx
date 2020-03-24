@@ -21,10 +21,8 @@ function App() {
 
   return (
     < div className="App" >
-      <header className="App-header">
-        <h1>size=xl</h1>
-        <ReactWorldMap color="#ff0000" title="My Chart" size="xl" data={data} />
-      </header>
+      <header className="header">My Map</header>
+      <ReactWorldMap color="#ff0000" title="My Chart" size="xl" data={data} />
     </div>
   );
 }
