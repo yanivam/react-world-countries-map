@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ReactWorldMap color="#ff0000" value-title="My Chart" data=
+        <ReactWorldMap color="#ff0000" title="My Chart" size="xl"
+        data=
         {
           [
             {
