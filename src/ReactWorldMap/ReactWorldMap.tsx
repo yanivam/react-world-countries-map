@@ -24,22 +24,17 @@ interface ISize {
 }
 
 const CSizes: {[key:string]:ISize} = {
-  "xs": {width: 78, height: 66, viewBox: "0 -200 960 760"}, //screen size: 480x360
-  "sm": {width: 120, height: 100, viewBox: "0 -200 960 760"}, //screen size: 576x432
-  "md": {width: 168, height: 140, viewBox: "0 -200 960 760"}, //screen size: 768x576
-  "lg": {width: 240, height: 200, viewBox: "0 -200 960 760"}, //screen size: 992x744
-  "xl": {width: 360, height: 300, viewBox: "0 -200 960 760"}, //screen size: 1200x900
+  "xs": {width: 146, height: 132, viewBox: "0 -200 960 760"}, //screen size: 480x360
+  "sm": {width: 240, height: 200, viewBox: "0 -200 960 760"}, //screen size: 576x432
+  "md": {width: 336, height: 280, viewBox: "0 -200 960 760"}, //screen size: 768x576
+  "lg": {width: 480, height: 400, viewBox: "0 -200 960 760"}, //screen size: 992x744
+  "xl": {width: 720, height: 600, viewBox: "0 -200 960 760"}, //screen size: 1200x900
 }
 
 const ReactWorldMap: React.FC<IProps> = (props) => {
 
   // Setup width and height based on size
   const size = typeof(props.size)!=="undefined" ? props.size : "xs"
-  /* const width = CSizes[size].width
-  const height = CSizes[size].height
-  const viewBox = "0 -200 " + width + " " + height
-*/
-
   const width = CSizes[size].width
   const height = CSizes[size].height
   const viewBox = CSizes[size].viewBox
