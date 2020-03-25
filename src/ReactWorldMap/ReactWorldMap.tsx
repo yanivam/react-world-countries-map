@@ -47,6 +47,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
   const valueSuffix = (typeof(props["value-suffix"])==="undefined") ? "" : props["value-suffix"]
   const tooltipBgColor = (typeof(props.tooltipBgColor)==="undefined") ? "black" : props.tooltipBgColor
   const tooltipTextColor = (typeof(props.tooltipTextColor)==="undefined") ? "white" : props.tooltipTextColor
+  const title = (typeof(props.title)==="undefined") ? "" : <p>{props.title}</p>
 
   const containerRef = React.createRef<SVGSVGElement>();
 
@@ -92,7 +93,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
           />
           <text x={15} y={25} fontSize={12} fill={tooltipTextColor}>
             <tspan>{feature.properties.NAME}</tspan>
-            <tspan x={15} dy="1em">{countryValueMap[feature.properties.ISO_A2]} {valueSuffix}</tspan>
+            <tspan x={15} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2]} {valueSuffix}</tspan>
           </text>
         </Tooltip>
 
@@ -114,6 +115,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
   // Render the SVG
   return (
     <div className="mapView">
+      {title}
       <svg ref={containerRef} className="map" height={height + "px"} width={width + "px"} viewBox={viewBox}>
         {countriesPath}
       </svg>
