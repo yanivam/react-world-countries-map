@@ -7,22 +7,30 @@ function App() {
     [
       {
         "country-code": "us",
-        value: 360
+        value: 10
       },
       {
         "country-code": "ru",
-        value: 200
+        value: 20
       },
       {
-        "country-code": "il",
-        value: 230
+        "country-code": "ca",
+        value: 30
+      },
+      {
+        "country-code": "mx",
+        value: 40
+      },
+      {
+        "country-code": "fr",
+        value: 50
       }
     ]
 
   return (
     < div className="App" >
       < div className="Main">
-        <ReactWorldMap color="#ff0000" title="My Chart" size="xl" data={data} />
+        <ReactWorldMap color="#00ff00" title="My Chart" size="xl" data={data} />
       </div>
     </div>
   );

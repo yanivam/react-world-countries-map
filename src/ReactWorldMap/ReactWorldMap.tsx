@@ -41,9 +41,13 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
 
   // Build the country map for direct access
   const countryValueMap: {[key:string]:number} = {}
+  let max:number = -Infinity
+  let min:number = Infinity
   props.data.forEach( entry => {
     const key = entry["country-code"].toUpperCase()
     const value = entry.value
+    min = (min > value) ? value : min
+    max = (max < value) ? value : max
     countryValueMap[key] = value
   })
 
@@ -53,24 +57,20 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
   var clickedCountryName = ""
   var clickedCountryValue = 0*/
 
-  /*const computedAverage = (data: IData[]) => {
-    var sum = data.reduce((sum, value) => {
-      return sum + value;
-    }, 0);
-  
-    return avg = sum / data.length;
-  }*/
 
   // build path for each country
   const countriesPath = geoData.features
     .map((feature, idx) => {
-      //const averageValue = computedAverage(props.data.values)
-      //const standardDeviation = computedStandardDeviation(props.data.values)
-      const color = typeof(countryValueMap[feature.properties.ISO_A2])!="undefined" ? props.color : CDefaultColor
+      let color:string = CDefaultColor
+      let opacityLevel = 0.1
+      if(typeof(countryValueMap[feature.properties.ISO_A2])!="undefined") {
+        color = props.color ? props.color : CDefaultColor
+        opacityLevel += (0.9 * (countryValueMap[feature.properties.ISO_A2] - min) / (max - min))
+      }
       const path = <path
         key={"path" + idx}
         d={pathGenerator(feature as GeoJSON.Feature) as string}
-        style={{ fill: color, fillOpacity: 1, stroke: "black", strokeWidth: 1, strokeOpacity: 0.1, cursor: "pointer" }}
+        style={{ fill: color, fillOpacity: opacityLevel, stroke: "black", strokeWidth: 1, strokeOpacity: 0.1, cursor: "pointer" }}
       /> 
       return path
     })
