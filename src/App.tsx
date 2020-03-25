@@ -30,7 +30,7 @@ function App() {
   return (
     < div className="App" >
       < div className="Main">
-        <ReactWorldMap color="#00ff00" title="My Chart" size="xl" data={data} />
+        <ReactWorldMap color="#00ff00" title="My Chart" value-label="Smart people" size="xl" data={data} />
       </div>
     </div>
   );

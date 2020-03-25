@@ -2,6 +2,7 @@ import React from "react"
 import { geoMercator, geoPath } from "d3-geo"
 import geoData from "../data/countries.geo"
 import "./ReactWorldMap.css"
+import { Tooltip } from "react-svg-tooltip";
 
 const CDefaultColor = "#dddddd"
 
@@ -13,6 +14,7 @@ interface IData {
 interface IProps {
   data: IData[],
   title?: string,
+  "value-label"?: string,
   color?: string,
   size?: string // possile values are xs, sm, md, lg, xl
 }
@@ -39,6 +41,8 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
   const height = CSizes[size].height
   const viewBox = CSizes[size].viewBox
 
+  const containerRef = React.createRef<SVGSVGElement>();
+
   // Build the country map for direct access
   const countryValueMap: {[key:string]:number} = {}
   let max:number = -Infinity
@@ -53,10 +57,6 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
 
   const projection = geoMercator()
   const pathGenerator = geoPath().projection(projection)
-  /*var showTooltip = false
-  var clickedCountryName = ""
-  var clickedCountryValue = 0*/
-
 
   // build path for each country
   const countriesPath = geoData.features
@@ -67,29 +67,44 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
         color = props.color ? props.color : CDefaultColor
         opacityLevel += (0.9 * (countryValueMap[feature.properties.ISO_A2] - min) / (max - min))
       }
-      const path = <path
-        key={"path" + idx}
-        d={pathGenerator(feature as GeoJSON.Feature) as string}
-        style={{ fill: color, fillOpacity: opacityLevel, stroke: "black", strokeWidth: 1, strokeOpacity: 0.1, cursor: "pointer" }}
-      /> 
+      const triggerRef = React.createRef<SVGPathElement>();
+      const path = (
+        <g key={feature.properties.NAME}>
+          <path
+            key={"path" + idx}
+            ref={triggerRef}
+            d={pathGenerator(feature as GeoJSON.Feature) as string}
+            style={{ fill: color, fillOpacity: opacityLevel, stroke: "black", strokeWidth: 1, strokeOpacity: 0.1, cursor: "pointer" }}
+          />
+          <Tooltip triggerRef={triggerRef} containerRef={containerRef}>
+          <rect
+            x={10}
+            y={10}
+            width={300}
+            height={50}
+            rx={0.5}
+            ry={0.5}
+            fill="black"
+          />
+          <text x={25} y={25} fontSize={12} fill="white">
+            <tspan>Country name: {feature.properties.NAME}</tspan>
+            <tspan x={22} dy="1em">
+            {props["value-label"] ? props["value-label"]: "Value"}: {countryValueMap[feature.properties.ISO_A2] ? countryValueMap[feature.properties.ISO_A2] : 0}
+            </tspan>
+          </text>
+          </Tooltip>
+        </g>
+      )
       return path
     })
 
   return (
     <div className="mapView">
-      <svg className="map" height={height+"px"} width={width+"px"} viewBox={viewBox}>
+      <svg ref={containerRef} className="map" height={height+"px"} width={width+"px"} viewBox={viewBox}>
         {countriesPath}
       </svg>
     </div>
   )
-  /*
-  <g id="highlighter" className="highlighter" onClick={toggleTooltip()} >
-    {countries}
-  </g>
-  <div className={showTooltip ? "show" : "hide"}>
-    <p>Country name: {clickedCountryName}</p>
-    <p>Value: {clickedCountryValue}</p>
-  </div>*/
 }
 
 export default ReactWorldMap
