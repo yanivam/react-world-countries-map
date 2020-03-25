@@ -93,7 +93,7 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
           />
           <text x={15} y={25} fontSize={12} fill={tooltipTextColor}>
             <tspan>{feature.properties.NAME}</tspan>
-            <tspan x={15} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2]} {valueSuffix}</tspan>
+            <tspan x={15} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2].toLocaleString()} {valueSuffix}</tspan>
           </text>
         </Tooltip>
 
