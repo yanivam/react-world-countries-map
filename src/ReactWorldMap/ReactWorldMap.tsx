@@ -83,17 +83,17 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
       const tooltip = (!isHighlight) ? "" :
         <Tooltip triggerRef={triggerRef} containerRef={containerRef} >
           <rect
-            x={10}
-            y={10}
-            width={160}
-            height={36}
-            rx={0.5}
-            ry={0.5}
+            x={30}
+            y={30}
+            width={320}
+            height={80}
+            rx={5}
+            ry={5}
             fill={tooltipBgColor}
           />
-          <text x={15} y={25} fontSize={12} fill={tooltipTextColor}>
+          <text x={60} y={60} fontSize={24} fill={tooltipTextColor}>
             <tspan>{feature.properties.NAME}</tspan>
-            <tspan x={15} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2].toLocaleString()} {valueSuffix}</tspan>
+            <tspan x={60} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2].toLocaleString()} {valueSuffix}</tspan>
           </text>
         </Tooltip>
 

@@ -35,14 +35,16 @@ function App() {
     < div className="App" >
       < div className="Main">
         <table>
-          <tr>
-            <td>
-              <ReactWorldMap color="red" title="Top 10 Populous Countries" value-suffix="people" size="md" data={data1} />
-            </td>
-            <td>
-              <ReactWorldMap color="green" title="Top 10 GDP per Capita" value-prefix="$" size="md" data={data2} />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <ReactWorldMap color="red" title="Top 10 Populous Countries" value-suffix="people" size="lg" data={data1} />
+              </td>
+              <td>
+                <ReactWorldMap color="green" title="Top 10 GDP per Capita" value-prefix="$" size="lg" data={data2} />
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
