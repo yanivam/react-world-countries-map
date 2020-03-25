@@ -6,9 +6,9 @@ function App() {
   const data =
     [
       {"country-code": "cn", value: 1389618778}, // china
-      {"country-code": "id", value: 1311559204}, // india
+      {"country-code": "in", value: 1311559204}, // india
       {"country-code": "us", value: 331883986},  // united states
-      {"country-code": "in", value: 264935824},  // indonesia
+      {"country-code": "id", value: 264935824},  // indonesia
       {"country-code": "pk", value: 210797836},  // pakistan
       {"country-code": "br", value: 210301591},  // brazil
       {"country-code": "ng", value: 208679114},  // nigeria

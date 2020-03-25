@@ -84,14 +84,15 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
           <rect
             x={10}
             y={10}
-            width={300}
-            height={50}
+            width={160}
+            height={36}
             rx={0.5}
             ry={0.5}
             fill={tooltipBgColor}
           />
-          <text x={25} y={25} fontSize={12} fill={tooltipTextColor}>
-            <tspan>{feature.properties.NAME}: {countryValueMap[feature.properties.ISO_A2]} {valueSuffix}</tspan>
+          <text x={15} y={25} fontSize={12} fill={tooltipTextColor}>
+            <tspan>{feature.properties.NAME}</tspan>
+            <tspan x={15} dy="1em">{countryValueMap[feature.properties.ISO_A2]} {valueSuffix}</tspan>
           </text>
         </Tooltip>
 
