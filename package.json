@@ -1,7 +1,12 @@
 {
   "name": "react-world-map",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "displayName": "React World Map",
+  "description": "A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.",
+  "authors": [
+    "Yanivam https://github.com/yanivam)"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -46,5 +51,14 @@
   },
   "devDependencies": {
     "create-react-component-folder": "^0.2.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "world map",
+    "typescript"
+  ],
+  "homepage": "https://github.com/yanivam/react-world-map#readme",
+  "bugs": "https://github.com/yanivam/react-world-map/issues",
+  "repository": "github:yanivam/react-world-map",
+  "license": "Apache-2.0"
 }
