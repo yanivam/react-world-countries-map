@@ -68,9 +68,10 @@ function App() {
 ### Data
 The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars [ISO 3166-1 alpha-2 codes](https://www.nationsonline.org/oneworld/country_code_list.htm), and value is a number.
 
-### Optional Props*
+### Optional Props
 
-| Prop             | Type   | Description|
+| Prop             | Type   | Description |
+| ---------------- | ------ | ----------- |
 | size             | string | One of "sm", md", "lg" |
 | title            | string | Any string |
 | color            | string | A standard color string. E.g. "red" or "#ff0000" |
