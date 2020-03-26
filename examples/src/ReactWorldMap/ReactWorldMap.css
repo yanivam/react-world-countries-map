@@ -1,0 +1,10 @@
+.mapView {
+    height: auto;
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+.map {
+    background-color: #ffffff;
+}
