@@ -1,5 +1,5 @@
 # react-world-map
-React componnets for world maps that is really simple and free. 
+A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
 ```
 <ReactWorldMap color="red" title="This is My Map" size="lg" data={data} />
@@ -11,14 +11,12 @@ Focus on simple and free.
 * Draw countires on a world map. 
 * Free - Really free with no limits. 
 * No registration - It is just a react component. 
-* No internet dependency - All the data is local, not backend server is needed. 
+* No internet dependency - All the data is local, not backend server needed. 
 * Easy to learn, easy to use, easy to customize. 
 
 ## Yet another package for world-map...but why?
 
-It all started with a fun project (react-typescript-node.js) that I was building and needed to draw simple yet beautiful world's map. Searching for solutions I found many potential solutions like MapBox and Google Maps, but they were "too smart" for what I needed. They needed to "call home" for the data, they supported tons of options I didn't need, and while they included react-integrations, they were not completely native to the react world. There was definitely something missing. And that's when react-world-map-lite started. 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It all started with a fun project that I was building and needed to draw simple yet beautiful world's map. Searching for solutions I found many potential solutions like MapBox and Google Maps, but they were "too smart" for what I needed. They needed to "call home" for the data, they supported tons of options I didn't need, and while they included react-integrations, they were not completely native to the react world. There was definitely something missing. And that's when react-world-map started. 
 
 ## Install
 
@@ -32,7 +30,7 @@ Explore the example folder for an end-to-end react app using the react-world-map
 
 Here are the basics:
 
-```
+~~~
 import React from "react"
 import "./App.css"
 import ReactWorldMap from "react-world-map"
@@ -40,16 +38,16 @@ import ReactWorldMap from "react-world-map"
 function App() {
   const data =
     [
-      { "country-code": "cn", value: 1389618778 }, // china
-      { "country-code": "in", value: 1311559204 }, // india
-      { "country-code": "us", value: 331883986 },  // united states
-      { "country-code": "id", value: 264935824 },  // indonesia
-      { "country-code": "pk", value: 210797836 },  // pakistan
-      { "country-code": "br", value: 210301591 },  // brazil
-      { "country-code": "ng", value: 208679114 },  // nigeria
-      { "country-code": "bd", value: 161062905 },  // bangladesh
-      { "country-code": "ru", value: 141944641 },  // russia
-      { "country-code": "mx", value: 127318112 }   // mexico
+      { "country": "cn", value: 1389618778 }, // china
+      { "country": "in", value: 1311559204 }, // india
+      { "country": "us", value: 331883986 },  // united states
+      { "country": "id", value: 264935824 },  // indonesia
+      { "country": "pk", value: 210797836 },  // pakistan
+      { "country": "br", value: 210301591 },  // brazil
+      { "country": "ng", value: 208679114 },  // nigeria
+      { "country": "bd", value: 161062905 },  // bangladesh
+      { "country": "ru", value: 141944641 },  // russia
+      { "country": "mx", value: 127318112 }   // mexico
     ]
 
   return (
