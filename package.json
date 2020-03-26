@@ -5,7 +5,7 @@
   "displayName": "React World Map",
   "description": "A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.",
   "authors": [
-    "Yanivam https://github.com/yanivam)"
+    "Yanivam (https://github.com/yanivam)"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
