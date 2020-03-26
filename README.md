@@ -89,7 +89,7 @@ Example of valid data prop:
 | tooltipBgColor   | string | Tooltip background color |
 | tooltipTextColor | string | Tooltip text color |
 | value-prefix     | string | A string to prefix values in tooltips. E.g. "$" |
-| value-suffix     | string | A string to suffix values in tooltips. E.g. "UDS" |
+| value-suffix     | string | A string to suffix values in tooltips. E.g. "USD" |
 
 ## License
 MIT
