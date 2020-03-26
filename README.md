@@ -1,9 +1,14 @@
 # react-world-map
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
-```
+~~~
+const data =
+    [
+      { "country": "cn", value: 1389618778 }, // china
+      { "country": "in", value: 1311559204 }, // india
+    ]
 <ReactWorldMap color="red" title="This is My Map" size="lg" data={data} />
-```
+~~~
 
 ## Why is it different? 
 Focus on simple and free. 
@@ -28,7 +33,7 @@ $ npm install react-world-map --save
 
 Explore the example folder for an end-to-end react app using the react-world-map. 
 
-Here are the basics:
+Here is a simple example:
 
 ~~~
 import React from "react"
@@ -59,23 +64,20 @@ function App() {
 ~~~
 
 ## Customizations
-Here are the props available for adjusting the look of the map:
 
-*Data*
-The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars (ISO 3166-1 alpha-2 codes)[https://www.nationsonline.org/oneworld/country_code_list.htm], and value is a number.
+### Data
+The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars [ISO 3166-1 alpha-2 codes](https://www.nationsonline.org/oneworld/country_code_list.htm), and value is a number.
 
-*Optional Props*
+### Optional Props*
 
-|---|---|---|
-|Prop|Type|Description|
-|size|string|One of "xs", "sm", md", "lg", "xl"|
-|title|string|Any string|
-|color|string|A standard color string. E.g. "red" or "#ff0000"|
-|tooltipBgColor|string|A standard color string|
-|tooltipTextColor|string|A standard color string|
-|value-prefix|string|A const string that will prefix values in the tooltip|
-|value-suffix|string|A const string that will suffix values in the tooltip|
-|---|---|---|
+| Prop             | Type   | Description|
+| size             | string | One of "sm", md", "lg" |
+| title            | string | Any string |
+| color            | string | A standard color string. E.g. "red" or "#ff0000" |
+| tooltipBgColor   | string | A standard color string |
+| tooltipTextColor | string | A standard color string |
+| value-prefix     | string | A const string that will prefix values in the tooltip |
+| value-suffix     | string | A const string that will suffix values in the tooltip |
 
 ## License
 MIT
