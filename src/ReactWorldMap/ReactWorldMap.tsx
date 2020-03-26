@@ -73,25 +73,27 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
       const isHighlight = typeof (countryValueMap[feature.properties.ISO_A2]) != "undefined"
       let color: string = CDefaultColor
       let opacityLevel = 0.1
+      
 
       // Things to do if country is in data
       if (isHighlight) {
         color = props.color ? props.color : CDefaultColor
         opacityLevel += (0.9 * (countryValueMap[feature.properties.ISO_A2] - min) / (max - min))
       }
-
+      
+      const tooltipStart = 30
       const tooltip = (!isHighlight) ? "" :
         <Tooltip triggerRef={triggerRef} containerRef={containerRef} >
           <rect
-            x={30}
-            y={30}
+            x={tooltipStart}
+            y={tooltipStart}
             width={320}
             height={80}
             rx={5}
             ry={5}
             fill={tooltipBgColor}
           />
-          <text x={60} y={60} fontSize={24} fill={tooltipTextColor}>
+          <text x={tooltipStart * 2} y={tooltipStart * 2} fontSize={24} fill={tooltipTextColor}>
             <tspan>{feature.properties.NAME}</tspan>
             <tspan x={60} dy="1em">{valuePrefix}{countryValueMap[feature.properties.ISO_A2].toLocaleString()} {valueSuffix}</tspan>
           </text>
