@@ -15,8 +15,8 @@ Focus on simple and free.
 
 * Draw countires on a world map. 
 * Free - Really free with no limits. 
-* No registration - It is just a react component. 
-* No internet dependency - All the data is local, not backend server needed. 
+* No registration - It is just a pure react component. 
+* No internet dependency - All the data is local, no calls to a back-end server. 
 * Easy to learn, easy to use, easy to customize. 
 
 ## Yet another package for world-map...but why?
@@ -63,7 +63,7 @@ function App() {
 }
 ~~~
 
-## Customizations
+## Customization
 
 ### Data
 The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars ([ISO alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) and value is a number.
@@ -85,11 +85,11 @@ Example of valid data prop:
 | ---------------- | ------ | ----------- |
 | size             | string | One of "sm", md", "lg" |
 | title            | string | Any string |
-| color            | string | A standard color string. E.g. "red" or "#ff0000" |
-| tooltipBgColor   | string | A standard color string |
-| tooltipTextColor | string | A standard color string |
-| value-prefix     | string | A const string that will prefix values in the tooltip |
-| value-suffix     | string | A const string that will suffix values in the tooltip |
+| color            | string | Color to highlight countries. A standard color string. E.g. "red" or "#ff0000" |
+| tooltipBgColor   | string | Tooltip background color |
+| tooltipTextColor | string | Tooltip text color |
+| value-prefix     | string | A string to prefix values in tooltips. E.g. "$" |
+| value-suffix     | string | A string to suffix values in tooltips. E.g. "UDS" |
 
 ## License
 MIT
