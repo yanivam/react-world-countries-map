@@ -73,7 +73,6 @@ const ReactWorldMap: React.FC<IProps> = (props) => {
       const isHighlight = typeof (countryValueMap[feature.properties.ISO_A2]) != "undefined"
       let color: string = CDefaultColor
       let opacityLevel = 0.1
-      
 
       // Things to do if country is in data
       if (isHighlight) {
