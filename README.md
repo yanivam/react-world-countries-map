@@ -66,7 +66,18 @@ function App() {
 ## Customizations
 
 ### Data
-The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars [ISO 3166-1 alpha-2 codes](https://www.nationsonline.org/oneworld/country_code_list.htm), and value is a number.
+The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars ([ISO alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) and value is a number.
+
+Example of valid data prop:
+
+~~~
+  const data =
+    [
+      { "country": "cn", value: 1 }, // china
+      { "country": "in", value: 2 }, // india
+      { "country": "us", value: 3 }  // united states
+    ]
+~~~
 
 ### Optional Props
 
