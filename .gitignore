@@ -1,6 +1,8 @@
 node_modules/
 build/
 .firebase/
+package-lock.json
+yarn.lock
 **/.DS_Store
 **/log
 **/logs
