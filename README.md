@@ -13,7 +13,7 @@ const data =
 ## Why is it different? 
 Focus on simple and free. 
 
-* Draw countires on a world map. 
+* Draw countries on a world map. 
 * Free - Really free with no limits. 
 * No registration - It is just a pure react component. 
 * No internet dependency - All the data is local, no calls to a back-end server. 
@@ -25,13 +25,15 @@ It all started with a fun project that I was building and needed to draw simple 
 
 ## Install
 
+In order to install, run the following command:
+
 ~~~
 $ npm install react-world-countries-map --save
 ~~~
 
 ## Usage
 
-Explore the example folder for an end-to-end react app using the react-world-countries-map. 
+Explore the example folder for a simple case for an end-to-end react app using the react-world-countries-map. 
 
 Here is a simple example:
 
@@ -66,7 +68,7 @@ function App() {
 ## Customization
 
 ### Data
-The only mandatory prop. Data contains an array of country/value records, where country is a 2 chars ([ISO alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) and value is a number.
+The only mandatory prop. Data contains an array of country/value objects, with values for countries that you have values for, (countries without a value will be blank). The country code is a 2 character string representing the country ([ISO alpha-2] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) and value is a number.
 
 Example of valid data prop:
 
@@ -83,9 +85,9 @@ Example of valid data prop:
 
 | Prop             | Type   | Description |
 | ---------------- | ------ | ----------- |
-| size             | string | One of "sm", md", "lg" |
-| title            | string | Any string |
-| color            | string | Color to highlight countries. A standard color string. E.g. "red" or "#ff0000" |
+| size             | string | The size of your map, either "sm", md", or "lg" |
+| title            | string | Any string for the title of your map |
+| color            | string | Background color for countries. A standard color string. E.g. "red" or "#ff0000" |
 | tooltipBgColor   | string | Tooltip background color |
 | tooltipTextColor | string | Tooltip text color |
 | value-prefix     | string | A string to prefix values in tooltips. E.g. "$" |
