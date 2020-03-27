@@ -1,4 +1,4 @@
-# react-world-map
+# react-world-countries-map
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
 ~~~
@@ -7,7 +7,7 @@ const data =
       { "country": "cn", value: 1389618778 }, // china
       { "country": "in", value: 1311559204 }, // india
     ]
-<ReactWorldMap color="red" title="This is My Map" size="lg" data={data} />
+<ReactWorldCountriesMap color="red" title="This is My Map" size="lg" data={data} />
 ~~~
 
 ## Why is it different? 
@@ -19,26 +19,26 @@ Focus on simple and free.
 * No internet dependency - All the data is local, no calls to a back-end server. 
 * Easy to learn, easy to use, easy to customize. 
 
-## Yet another package for world-map...but why?
+## Yet another package for world map...but why?
 
-It all started with a fun project that I was building and needed to draw simple yet beautiful world's map. Searching for solutions I found many potential solutions like MapBox and Google Maps, but they were "too smart" for what I needed. They needed to "call home" for the data, they supported tons of options I didn't need, and while they included react-integrations, they were not completely native to the react world. There was definitely something missing. And that's when react-world-map started. 
+It all started with a fun project that I was building and needed to draw simple yet beautiful world's map. Searching for solutions I found many potential solutions like MapBox and Google Maps, but they were "too smart" for what I needed. They needed to "call home" for the data, they supported tons of options I didn't need, and while they included react-integrations, they were not completely native to the react world. There was definitely something missing. And that's when react-world-countries-map started. 
 
 ## Install
 
 ~~~
-$ npm install react-world-map --save
+$ npm install react-world-countries-map --save
 ~~~
 
 ## Usage
 
-Explore the example folder for an end-to-end react app using the react-world-map. 
+Explore the example folder for an end-to-end react app using the react-world-countries-map. 
 
 Here is a simple example:
 
 ~~~
 import React from "react"
 import "./App.css"
-import ReactWorldMap from "react-world-map"
+import ReactWorldCountriesMap from "react-world-countries-map"
 
 function App() {
   const data =
@@ -57,7 +57,7 @@ function App() {
 
   return (
     < div className="App" >
-       <ReactWorldMap color="red" title="Top 10 Populous Countries" value-suffix="people" size="lg" data={data} />
+       <ReactWorldCountriesMap color="red" title="Top 10 Populous Countries" value-suffix="people" size="lg" data={data} />
     </div>
   )
 }
