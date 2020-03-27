@@ -1,7 +1,7 @@
 {
   "name": "react-world-countries-map",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "displayName": "React World Map of Countries",
   "main": "./lib/index.tsx",
   "description": "A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.",
@@ -9,9 +9,6 @@
     "Yanivam (https://github.com/yanivam)"
   ],
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "@types/d3-geo": "^1.11.1",
     "@types/immutable": "^3.8.7",
     "@types/jest": "^24.0.0",
@@ -27,8 +24,6 @@
     "prop-types": "^15.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-map-gl": "^5.2.3",
-    "react-map-gl-draw": "^0.17.4-alpha.2",
     "react-scripts": "3.4.1",
     "react-svg-tooltip": "0.0.11",
     "typescript": "~3.7.2",
@@ -59,9 +54,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/loader": "^7.9.0",
     "babel-loader": "^8.1.0",
-    "create-react-component-folder": "^0.2.0",
     "gulp-babel": "^8.0.0",
     "ts-loader": "^6.2.2",
     "webpack-cli": "^3.3.11",
@@ -78,5 +71,5 @@
   ],
   "bugs": "https://github.com/yanivam/react-world-countries-map/issues",
   "repository": "github:yanivam/react-world-countries-map",
-  "license": "Apache-2.0"
+  "license": "MIT"
 }
