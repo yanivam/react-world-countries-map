@@ -2,11 +2,14 @@
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
 ~~~
+import ReactWorldCountriesMap from "react-world-countries-map"
+...
 const data =
     [
       { country: "cn", value: 1389618778 }, // china
       { country: "in", value: 1311559204 }, // india
     ]
+...
 <ReactWorldCountriesMap color="red" title="This is My Map" size="lg" data={data} />
 ~~~
 
