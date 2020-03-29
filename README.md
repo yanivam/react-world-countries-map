@@ -1,4 +1,5 @@
-# react-world-countries-map `still work in progress, considered experinmental`
+# react-world-countries-map 
+`works but still considered experinmental`
 
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
