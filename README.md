@@ -1,8 +1,6 @@
-# react-world-countries-map
+# react-world-countries-map `still work in progress, considered experinmental`
+
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
-
-# WORK IN PROGRESS, does not import properly yet
-
 
 ~~~
 import ReactWorldCountriesMap from "react-world-countries-map"
