@@ -1,7 +1,6 @@
 # react-world-countries-map 
-<font color="red">
-works but still considered experinmental
-</font>
+⚠️ works but still considered experinmental
+
 
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
