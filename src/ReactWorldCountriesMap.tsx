@@ -1,7 +1,6 @@
 import React from "react"
 import { geoMercator, geoPath } from "d3-geo"
 import geoData from "./countries.geo"
-import "./ReactWorldCountriesMap.css"
 import { Tooltip } from "react-svg-tooltip";
 
 const CDefaultColor = "#dddddd"
@@ -109,9 +108,9 @@ export const ReactWorldCountriesMap: React.FC<IProps> = (props) => {
 
   // Render the SVG
   return (
-    <div className="mapView">
+    <div style={{backgroundColor: "white", height: "auto", width: "auto", padding: "0px", margin: "0px"}}>
       {title}
-      <svg ref={containerRef} className="map" height={height + "px"} width={width + "px"} viewBox={CViewBox}>
+      <svg ref={containerRef} height={height + "px"} width={width + "px"} viewBox={CViewBox}>
         {countriesPath}
       </svg>
     </div>

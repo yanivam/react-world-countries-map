@@ -1,7 +1,0 @@
-src/
-examples/
-.babelrc
-webpack.config.js
-node_modules/
-package-lock.json
-tsconfig.json

@@ -1,76 +1,46 @@
 {
   "name": "react-world-countries-map",
-  "version": "1.0.5",
-  "private": false,
-  "displayName": "React World Map of Countries",
-  "main": "./dist/index.",
-  "description": "A pure react component to visualize world maps with highlighted countries. Simple. Free.",
-  "authors": [
-    "Yanivam (https://github.com/yanivam)"
+  "version": "1.0.6",
+  "license": "MIT",
+  "displayName": "React World Countries Map",
+  "description": "A pure react component to draw a map of world countries. Simple. Free.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
   ],
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "type": "webrtc",
-  "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+  "engines": {
+    "node": ">=10"
   },
   "scripts": {
-    "build": "webpack --mode production"
+    "start": "tsdx watch",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "peerDependencies": {
+    "react": ">=16",
+    "react-svg-tooltip": "0.0.11",
+    "d3-geo": "^1.11.9"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "authors": [
+    "yanivam (https://github.com/yanivam)"
+  ],
+  "module": "dist/react-world-countries-map.esm.js",
   "devDependencies": {
     "@types/d3-geo": "^1.11.1",
-    "@types/immutable": "^3.8.7",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.25",
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.5",
-    "@types/react-map-gl": "^5.2.0",
-    "@types/webpack": "^4.41.8",
-    "babel-core": "^6.21.0",
     "d3-geo": "^1.11.9",
-    "immutable": "^4.0.0-rc.12",
-    "path": "^0.12.7",
-    "react-scripts": "3.4.1",
+    "husky": "^4.2.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-svg-tooltip": "0.0.11",
-    "typescript": "~3.7.2",
-    "webpack": "^4.42.1",
-    "@babel/core": "^7.9.0",
-    "babel-loader": "^8.1.0",
-    "gulp-babel": "^8.0.0",
-    "ts-loader": "^6.2.2",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
-  },
-  "keywords": [
-    "react",
-    "world map",
-    "map",
-    "component",
-    "typescript",
-    "svg",
-    "countries"
-  ],
-  "bugs": "https://github.com/yanivam/react-world-countries-map/issues",
-  "repository": "github:yanivam/react-world-countries-map",
-  "license": "MIT"
+    "tsdx": "^0.13.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
 }
