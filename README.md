@@ -5,7 +5,7 @@
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
 ~~~
-import ReactWorldCountriesMap from "react-world-countries-map"
+import { ReactWorldCountriesMap } from "react-world-countries-map"
 ...
 const data =
     [
@@ -46,7 +46,7 @@ Here is a simple example:
 ~~~
 import React from "react"
 import "./App.css"
-import ReactWorldCountriesMap from "react-world-countries-map"
+import { ReactWorldCountriesMap } from "react-world-countries-map"
 
 function App() {
   const data =
@@ -64,7 +64,7 @@ function App() {
     ]
 
   return (
-    < div className="App" >
+    <div className="App" >
        <ReactWorldCountriesMap color="red" title="Top 10 Populous Countries" value-suffix="people" size="lg" data={data} />
     </div>
   )
