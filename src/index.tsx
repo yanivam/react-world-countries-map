@@ -1,5 +1,1 @@
-import ReactWorldCountriesMap from "./ReactCountriesWorldMap"
-
-export {
-	ReactWorldCountriesMap
-}
+export { ReactWorldCountriesMap } from "./ReactWorldCountriesMap"
