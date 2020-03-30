@@ -1,6 +1,6 @@
 {
   "name": "react-world-countries-map",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "license": "MIT",
   "displayName": "React World Countries Map",
   "description": "A pure react component to draw a map of world countries. Simple. Free.",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "NODE_OPTIONS='--max-old-space-size=8192' tsdx build",
+    "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
@@ -28,6 +28,15 @@
   },
   "authors": [
     "yanivam (https://github.com/yanivam)"
+  ],
+  "keywords": [
+    "react",
+    "world map",
+    "map",
+    "component",
+    "typescript",
+    "svg",
+    "countries"
   ],
   "module": "dist/react-world-countries-map.esm.js",
   "devDependencies": {
