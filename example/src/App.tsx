@@ -1,6 +1,6 @@
 import React from "react"
 import "./App.css"
-import { ReactWorldCountriesMap } from "../src/ReactWorldCountriesMap"
+import { ReactWorldCountriesMap } from "react-world-countries-map"
 
 function App() {
   const data1 =
