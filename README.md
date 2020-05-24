@@ -1,5 +1,7 @@
 # react-world-countries-map 
-:warning: This package is not longer maintained. The project was moved to a new home at [react-svg-worldmap](https://github.com/yanivam/react-svg-worldmap).
+:warning: **This package is not longer maintained. The project was moved to a new home at [react-svg-worldmap](https://github.com/yanivam/react-svg-worldmap).**
+
+## Old content 
 
 A pure react component to visualize world maps with highlighted countries. Simple. Free. No Registration, No access token, No back-end service.
 
